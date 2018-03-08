@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5856E1242051137F00884124 /* UIImage+MYImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5856E1232051137F00884124 /* UIImage+MYImage.m */; };
+		5856E126205117B000884124 /* pppp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5856E125205117B000884124 /* pppp.jpg */; };
+		5856E128205122AF00884124 /* myList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5856E127205122AF00884124 /* myList.plist */; };
+		5856E12A2051251500884124 /* list.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5856E1292051251500884124 /* list.plist */; };
+		5856E12D2051255800884124 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 5856E12C2051255800884124 /* User.m */; };
+		5856E130205128C300884124 /* MyRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 5856E12F205128C300884124 /* MyRoom.m */; };
+		5856E13320513A2100884124 /* MyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5856E13220513A2100884124 /* MyModel.m */; };
 		D0099495200C7CEC00134B31 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0099494200C7CEC00134B31 /* AppDelegate.m */; };
 		D0099498200C7CEC00134B31 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0099497200C7CEC00134B31 /* ViewController.m */; };
 		D009949B200C7CEC00134B31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0099499200C7CEC00134B31 /* Main.storyboard */; };
@@ -36,6 +43,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5856E1222051137F00884124 /* UIImage+MYImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+MYImage.h"; sourceTree = "<group>"; };
+		5856E1232051137F00884124 /* UIImage+MYImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MYImage.m"; sourceTree = "<group>"; };
+		5856E125205117B000884124 /* pppp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pppp.jpg; sourceTree = "<group>"; };
+		5856E127205122AF00884124 /* myList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = myList.plist; sourceTree = "<group>"; };
+		5856E1292051251500884124 /* list.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = list.plist; sourceTree = "<group>"; };
+		5856E12B2051255800884124 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		5856E12C2051255800884124 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		5856E12E205128C300884124 /* MyRoom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyRoom.h; sourceTree = "<group>"; };
+		5856E12F205128C300884124 /* MyRoom.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyRoom.m; sourceTree = "<group>"; };
+		5856E13120513A2100884124 /* MyModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyModel.h; sourceTree = "<group>"; };
+		5856E13220513A2100884124 /* MyModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyModel.m; sourceTree = "<group>"; };
 		D0099490200C7CEC00134B31 /* RunTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0099493200C7CEC00134B31 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D0099494200C7CEC00134B31 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -108,8 +126,19 @@
 				D0099494200C7CEC00134B31 /* AppDelegate.m */,
 				D0099496200C7CEC00134B31 /* ViewController.h */,
 				D0099497200C7CEC00134B31 /* ViewController.m */,
+				5856E127205122AF00884124 /* myList.plist */,
+				5856E1292051251500884124 /* list.plist */,
 				D00994C5200C7D1700134B31 /* Person.h */,
 				D00994C6200C7D1700134B31 /* Person.m */,
+				5856E12B2051255800884124 /* User.h */,
+				5856E12C2051255800884124 /* User.m */,
+				5856E12E205128C300884124 /* MyRoom.h */,
+				5856E12F205128C300884124 /* MyRoom.m */,
+				5856E13120513A2100884124 /* MyModel.h */,
+				5856E13220513A2100884124 /* MyModel.m */,
+				5856E125205117B000884124 /* pppp.jpg */,
+				5856E1222051137F00884124 /* UIImage+MYImage.h */,
+				5856E1232051137F00884124 /* UIImage+MYImage.m */,
 				D0099499200C7CEC00134B31 /* Main.storyboard */,
 				D009949C200C7CEC00134B31 /* Assets.xcassets */,
 				D009949E200C7CEC00134B31 /* LaunchScreen.storyboard */,
@@ -244,8 +273,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D00994A0200C7CEC00134B31 /* LaunchScreen.storyboard in Resources */,
+				5856E128205122AF00884124 /* myList.plist in Resources */,
 				D009949D200C7CEC00134B31 /* Assets.xcassets in Resources */,
 				D009949B200C7CEC00134B31 /* Main.storyboard in Resources */,
+				5856E12A2051251500884124 /* list.plist in Resources */,
+				5856E126205117B000884124 /* pppp.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +303,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0099498200C7CEC00134B31 /* ViewController.m in Sources */,
+				5856E130205128C300884124 /* MyRoom.m in Sources */,
 				D00994A3200C7CEC00134B31 /* main.m in Sources */,
+				5856E13320513A2100884124 /* MyModel.m in Sources */,
+				5856E12D2051255800884124 /* User.m in Sources */,
+				5856E1242051137F00884124 /* UIImage+MYImage.m in Sources */,
 				D00994C7200C7D1700134B31 /* Person.m in Sources */,
 				D0099495200C7CEC00134B31 /* AppDelegate.m in Sources */,
 			);
