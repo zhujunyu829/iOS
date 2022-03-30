@@ -1,0 +1,912 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5855A53B27EEB4E800DE2F49 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855A53A27EEB4E800DE2F49 /* AppDelegate.m */; };
+		5855A53E27EEB4E800DE2F49 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855A53D27EEB4E800DE2F49 /* SceneDelegate.m */; };
+		5855A54127EEB4E800DE2F49 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855A54027EEB4E800DE2F49 /* ViewController.m */; };
+		5855A54427EEB4E800DE2F49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5855A54227EEB4E800DE2F49 /* Main.storyboard */; };
+		5855A54627EEB4EC00DE2F49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5855A54527EEB4EC00DE2F49 /* Assets.xcassets */; };
+		5855A54927EEB4EC00DE2F49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5855A54727EEB4EC00DE2F49 /* LaunchScreen.storyboard */; };
+		5855A54C27EEB4EC00DE2F49 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855A54B27EEB4EC00DE2F49 /* main.m */; };
+		5855A55627EEB4ED00DE2F49 /* TestWiFiTransmissionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855A55527EEB4ED00DE2F49 /* TestWiFiTransmissionTests.m */; };
+		5855A56027EEB4ED00DE2F49 /* TestWiFiTransmissionUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855A55F27EEB4ED00DE2F49 /* TestWiFiTransmissionUITests.m */; };
+		5855A56227EEB4ED00DE2F49 /* TestWiFiTransmissionUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855A56127EEB4ED00DE2F49 /* TestWiFiTransmissionUITestsLaunchTests.m */; };
+		5855A59827EEB7D900DE2F49 /* HTTPErrorResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855A57827EEB7D900DE2F49 /* HTTPErrorResponse.m */; };
+		5855A59927EEB7D900DE2F49 /* HTTPDataResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855A57927EEB7D900DE2F49 /* HTTPDataResponse.m */; };
+		5855A59A27EEB7D900DE2F49 /* HTTPDynamicFileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855A57B27EEB7D900DE2F49 /* HTTPDynamicFileResponse.m */; };
+		5855A59B27EEB7D900DE2F49 /* HTTPFileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855A57C27EEB7D900DE2F49 /* HTTPFileResponse.m */; };
+		5855A59C27EEB7D900DE2F49 /* HTTPAsyncFileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855A57D27EEB7D900DE2F49 /* HTTPAsyncFileResponse.m */; };
+		5855A59D27EEB7D900DE2F49 /* HTTPRedirectResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855A57E27EEB7D900DE2F49 /* HTTPRedirectResponse.m */; };
+		5855A59E27EEB7D900DE2F49 /* HTTPMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855A58427EEB7D900DE2F49 /* HTTPMessage.m */; };
+		5855A59F27EEB7D900DE2F49 /* HTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855A58527EEB7D900DE2F49 /* HTTPConnection.m */; };
+		5855A5A027EEB7D900DE2F49 /* WebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855A58627EEB7D900DE2F49 /* WebSocket.m */; };
+		5855A5A127EEB7D900DE2F49 /* MultipartMessageHeaderField.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855A58B27EEB7D900DE2F49 /* MultipartMessageHeaderField.m */; };
+		5855A5A227EEB7D900DE2F49 /* MultipartFormDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855A58C27EEB7D900DE2F49 /* MultipartFormDataParser.m */; };
+		5855A5A327EEB7D900DE2F49 /* MultipartMessageHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855A58D27EEB7D900DE2F49 /* MultipartMessageHeader.m */; };
+		5855A5A427EEB7D900DE2F49 /* HTTPAuthenticationRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855A58F27EEB7D900DE2F49 /* HTTPAuthenticationRequest.m */; };
+		5855A5A527EEB7D900DE2F49 /* DDNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855A59127EEB7D900DE2F49 /* DDNumber.m */; };
+		5855A5A627EEB7D900DE2F49 /* DDData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855A59227EEB7D900DE2F49 /* DDData.m */; };
+		5855A5A727EEB7D900DE2F49 /* DDRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855A59527EEB7D900DE2F49 /* DDRange.m */; };
+		5855A5A827EEB7D900DE2F49 /* HTTPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855A59727EEB7D900DE2F49 /* HTTPServer.m */; };
+		5855A5B327EEB7E000DE2F49 /* DAVConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855A5AB27EEB7E000DE2F49 /* DAVConnection.m */; };
+		5855A5B427EEB7E000DE2F49 /* DELETEResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855A5AD27EEB7E000DE2F49 /* DELETEResponse.m */; };
+		5855A5B527EEB7E000DE2F49 /* DAVResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855A5B027EEB7E000DE2F49 /* DAVResponse.m */; };
+		5855A5B627EEB7E000DE2F49 /* PUTResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855A5B127EEB7E000DE2F49 /* PUTResponse.m */; };
+		5855A5CE27EEB7E800DE2F49 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855A5B927EEB7E800DE2F49 /* DDTTYLogger.m */; };
+		5855A5CF27EEB7E800DE2F49 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855A5BC27EEB7E800DE2F49 /* DDASLLogger.m */; };
+		5855A5D027EEB7E800DE2F49 /* ContextFilterLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855A5C127EEB7E800DE2F49 /* ContextFilterLogFormatter.m */; };
+		5855A5D127EEB7E800DE2F49 /* DispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855A5C227EEB7E800DE2F49 /* DispatchQueueLogFormatter.m */; };
+		5855A5D227EEB7E800DE2F49 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5855A5C327EEB7E800DE2F49 /* README.txt */; };
+		5855A5D327EEB7E800DE2F49 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855A5C427EEB7E800DE2F49 /* DDLog.m */; };
+		5855A5D427EEB7E800DE2F49 /* About1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5855A5C527EEB7E800DE2F49 /* About1.txt */; };
+		5855A5D527EEB7E800DE2F49 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855A5C727EEB7E800DE2F49 /* DDAbstractDatabaseLogger.m */; };
+		5855A5D627EEB7E800DE2F49 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855A5C827EEB7E800DE2F49 /* DDFileLogger.m */; };
+		5855A5D727EEB7E800DE2F49 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855A5CB27EEB7E800DE2F49 /* GCDAsyncSocket.m */; };
+		5855A5D827EEB7E800DE2F49 /* About.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5855A5CC27EEB7E800DE2F49 /* About.txt */; };
+		5855A5DC27EEBAF400DE2F49 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 5855A5DA27EEBAF400DE2F49 /* index.html */; };
+		5855A5DD27EEBAF400DE2F49 /* upload.html in Resources */ = {isa = PBXBuildFile; fileRef = 5855A5DB27EEBAF400DE2F49 /* upload.html */; };
+		5855A5E027EEBB0100DE2F49 /* MyHTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5855A5DF27EEBB0100DE2F49 /* MyHTTPConnection.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5855A55227EEB4ED00DE2F49 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5855A52E27EEB4E800DE2F49 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5855A53527EEB4E800DE2F49;
+			remoteInfo = TestWiFiTransmission;
+		};
+		5855A55C27EEB4ED00DE2F49 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5855A52E27EEB4E800DE2F49 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5855A53527EEB4E800DE2F49;
+			remoteInfo = TestWiFiTransmission;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5855A53627EEB4E800DE2F49 /* TestWiFiTransmission.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestWiFiTransmission.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5855A53927EEB4E800DE2F49 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5855A53A27EEB4E800DE2F49 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5855A53C27EEB4E800DE2F49 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		5855A53D27EEB4E800DE2F49 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		5855A53F27EEB4E800DE2F49 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		5855A54027EEB4E800DE2F49 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		5855A54327EEB4E800DE2F49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5855A54527EEB4EC00DE2F49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5855A54827EEB4EC00DE2F49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5855A54A27EEB4EC00DE2F49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5855A54B27EEB4EC00DE2F49 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5855A55127EEB4ED00DE2F49 /* TestWiFiTransmissionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestWiFiTransmissionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5855A55527EEB4ED00DE2F49 /* TestWiFiTransmissionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestWiFiTransmissionTests.m; sourceTree = "<group>"; };
+		5855A55B27EEB4ED00DE2F49 /* TestWiFiTransmissionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestWiFiTransmissionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5855A55F27EEB4ED00DE2F49 /* TestWiFiTransmissionUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestWiFiTransmissionUITests.m; sourceTree = "<group>"; };
+		5855A56127EEB4ED00DE2F49 /* TestWiFiTransmissionUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestWiFiTransmissionUITestsLaunchTests.m; sourceTree = "<group>"; };
+		5855A57127EEB7D900DE2F49 /* HTTPConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPConnection.h; sourceTree = "<group>"; };
+		5855A57227EEB7D900DE2F49 /* HTTPLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPLogging.h; sourceTree = "<group>"; };
+		5855A57327EEB7D900DE2F49 /* HTTPMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPMessage.h; sourceTree = "<group>"; };
+		5855A57427EEB7D900DE2F49 /* WebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebSocket.h; sourceTree = "<group>"; };
+		5855A57527EEB7D900DE2F49 /* HTTPAuthenticationRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPAuthenticationRequest.h; sourceTree = "<group>"; };
+		5855A57727EEB7D900DE2F49 /* HTTPAsyncFileResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPAsyncFileResponse.h; sourceTree = "<group>"; };
+		5855A57827EEB7D900DE2F49 /* HTTPErrorResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPErrorResponse.m; sourceTree = "<group>"; };
+		5855A57927EEB7D900DE2F49 /* HTTPDataResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPDataResponse.m; sourceTree = "<group>"; };
+		5855A57A27EEB7D900DE2F49 /* HTTPRedirectResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPRedirectResponse.h; sourceTree = "<group>"; };
+		5855A57B27EEB7D900DE2F49 /* HTTPDynamicFileResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPDynamicFileResponse.m; sourceTree = "<group>"; };
+		5855A57C27EEB7D900DE2F49 /* HTTPFileResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPFileResponse.m; sourceTree = "<group>"; };
+		5855A57D27EEB7D900DE2F49 /* HTTPAsyncFileResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPAsyncFileResponse.m; sourceTree = "<group>"; };
+		5855A57E27EEB7D900DE2F49 /* HTTPRedirectResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPRedirectResponse.m; sourceTree = "<group>"; };
+		5855A57F27EEB7D900DE2F49 /* HTTPDataResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPDataResponse.h; sourceTree = "<group>"; };
+		5855A58027EEB7D900DE2F49 /* HTTPErrorResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPErrorResponse.h; sourceTree = "<group>"; };
+		5855A58127EEB7D900DE2F49 /* HTTPFileResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPFileResponse.h; sourceTree = "<group>"; };
+		5855A58227EEB7D900DE2F49 /* HTTPDynamicFileResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPDynamicFileResponse.h; sourceTree = "<group>"; };
+		5855A58327EEB7D900DE2F49 /* HTTPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPServer.h; sourceTree = "<group>"; };
+		5855A58427EEB7D900DE2F49 /* HTTPMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPMessage.m; sourceTree = "<group>"; };
+		5855A58527EEB7D900DE2F49 /* HTTPConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPConnection.m; sourceTree = "<group>"; };
+		5855A58627EEB7D900DE2F49 /* WebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebSocket.m; sourceTree = "<group>"; };
+		5855A58727EEB7D900DE2F49 /* HTTPResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPResponse.h; sourceTree = "<group>"; };
+		5855A58927EEB7D900DE2F49 /* MultipartFormDataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipartFormDataParser.h; sourceTree = "<group>"; };
+		5855A58A27EEB7D900DE2F49 /* MultipartMessageHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipartMessageHeader.h; sourceTree = "<group>"; };
+		5855A58B27EEB7D900DE2F49 /* MultipartMessageHeaderField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipartMessageHeaderField.m; sourceTree = "<group>"; };
+		5855A58C27EEB7D900DE2F49 /* MultipartFormDataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipartFormDataParser.m; sourceTree = "<group>"; };
+		5855A58D27EEB7D900DE2F49 /* MultipartMessageHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipartMessageHeader.m; sourceTree = "<group>"; };
+		5855A58E27EEB7D900DE2F49 /* MultipartMessageHeaderField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipartMessageHeaderField.h; sourceTree = "<group>"; };
+		5855A58F27EEB7D900DE2F49 /* HTTPAuthenticationRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPAuthenticationRequest.m; sourceTree = "<group>"; };
+		5855A59127EEB7D900DE2F49 /* DDNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDNumber.m; sourceTree = "<group>"; };
+		5855A59227EEB7D900DE2F49 /* DDData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDData.m; sourceTree = "<group>"; };
+		5855A59327EEB7D900DE2F49 /* DDRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDRange.h; sourceTree = "<group>"; };
+		5855A59427EEB7D900DE2F49 /* DDNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDNumber.h; sourceTree = "<group>"; };
+		5855A59527EEB7D900DE2F49 /* DDRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDRange.m; sourceTree = "<group>"; };
+		5855A59627EEB7D900DE2F49 /* DDData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDData.h; sourceTree = "<group>"; };
+		5855A59727EEB7D900DE2F49 /* HTTPServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPServer.m; sourceTree = "<group>"; };
+		5855A5AB27EEB7E000DE2F49 /* DAVConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAVConnection.m; sourceTree = "<group>"; };
+		5855A5AC27EEB7E000DE2F49 /* DAVResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAVResponse.h; sourceTree = "<group>"; };
+		5855A5AD27EEB7E000DE2F49 /* DELETEResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DELETEResponse.m; sourceTree = "<group>"; };
+		5855A5AE27EEB7E000DE2F49 /* PUTResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PUTResponse.h; sourceTree = "<group>"; };
+		5855A5AF27EEB7E000DE2F49 /* DAVConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAVConnection.h; sourceTree = "<group>"; };
+		5855A5B027EEB7E000DE2F49 /* DAVResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAVResponse.m; sourceTree = "<group>"; };
+		5855A5B127EEB7E000DE2F49 /* PUTResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PUTResponse.m; sourceTree = "<group>"; };
+		5855A5B227EEB7E000DE2F49 /* DELETEResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DELETEResponse.h; sourceTree = "<group>"; };
+		5855A5B927EEB7E800DE2F49 /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTTYLogger.m; sourceTree = "<group>"; };
+		5855A5BA27EEB7E800DE2F49 /* DDLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLog.h; sourceTree = "<group>"; };
+		5855A5BB27EEB7E800DE2F49 /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
+		5855A5BC27EEB7E800DE2F49 /* DDASLLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDASLLogger.m; sourceTree = "<group>"; };
+		5855A5BD27EEB7E800DE2F49 /* DDFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDFileLogger.h; sourceTree = "<group>"; };
+		5855A5BF27EEB7E800DE2F49 /* ContextFilterLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContextFilterLogFormatter.h; sourceTree = "<group>"; };
+		5855A5C027EEB7E800DE2F49 /* DispatchQueueLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispatchQueueLogFormatter.h; sourceTree = "<group>"; };
+		5855A5C127EEB7E800DE2F49 /* ContextFilterLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContextFilterLogFormatter.m; sourceTree = "<group>"; };
+		5855A5C227EEB7E800DE2F49 /* DispatchQueueLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispatchQueueLogFormatter.m; sourceTree = "<group>"; };
+		5855A5C327EEB7E800DE2F49 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		5855A5C427EEB7E800DE2F49 /* DDLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDLog.m; sourceTree = "<group>"; };
+		5855A5C527EEB7E800DE2F49 /* About1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = About1.txt; sourceTree = "<group>"; };
+		5855A5C627EEB7E800DE2F49 /* DDTTYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTTYLogger.h; sourceTree = "<group>"; };
+		5855A5C727EEB7E800DE2F49 /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
+		5855A5C827EEB7E800DE2F49 /* DDFileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDFileLogger.m; sourceTree = "<group>"; };
+		5855A5C927EEB7E800DE2F49 /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
+		5855A5CB27EEB7E800DE2F49 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		5855A5CC27EEB7E800DE2F49 /* About.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = About.txt; sourceTree = "<group>"; };
+		5855A5CD27EEB7E800DE2F49 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		5855A5DA27EEBAF400DE2F49 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		5855A5DB27EEBAF400DE2F49 /* upload.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = upload.html; sourceTree = "<group>"; };
+		5855A5DE27EEBB0100DE2F49 /* MyHTTPConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyHTTPConnection.h; sourceTree = "<group>"; };
+		5855A5DF27EEBB0100DE2F49 /* MyHTTPConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyHTTPConnection.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5855A53327EEB4E800DE2F49 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5855A54E27EEB4ED00DE2F49 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5855A55827EEB4ED00DE2F49 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5855A52D27EEB4E800DE2F49 = {
+			isa = PBXGroup;
+			children = (
+				5855A53827EEB4E800DE2F49 /* TestWiFiTransmission */,
+				5855A55427EEB4ED00DE2F49 /* TestWiFiTransmissionTests */,
+				5855A55E27EEB4ED00DE2F49 /* TestWiFiTransmissionUITests */,
+				5855A53727EEB4E800DE2F49 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5855A53727EEB4E800DE2F49 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5855A53627EEB4E800DE2F49 /* TestWiFiTransmission.app */,
+				5855A55127EEB4ED00DE2F49 /* TestWiFiTransmissionTests.xctest */,
+				5855A55B27EEB4ED00DE2F49 /* TestWiFiTransmissionUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5855A53827EEB4E800DE2F49 /* TestWiFiTransmission */ = {
+			isa = PBXGroup;
+			children = (
+				5855A56E27EEB4FC00DE2F49 /* lib */,
+				5855A53927EEB4E800DE2F49 /* AppDelegate.h */,
+				5855A53A27EEB4E800DE2F49 /* AppDelegate.m */,
+				5855A53C27EEB4E800DE2F49 /* SceneDelegate.h */,
+				5855A53D27EEB4E800DE2F49 /* SceneDelegate.m */,
+				5855A53F27EEB4E800DE2F49 /* ViewController.h */,
+				5855A54027EEB4E800DE2F49 /* ViewController.m */,
+				5855A54227EEB4E800DE2F49 /* Main.storyboard */,
+				5855A54527EEB4EC00DE2F49 /* Assets.xcassets */,
+				5855A54727EEB4EC00DE2F49 /* LaunchScreen.storyboard */,
+				5855A54A27EEB4EC00DE2F49 /* Info.plist */,
+				5855A54B27EEB4EC00DE2F49 /* main.m */,
+			);
+			path = TestWiFiTransmission;
+			sourceTree = "<group>";
+		};
+		5855A55427EEB4ED00DE2F49 /* TestWiFiTransmissionTests */ = {
+			isa = PBXGroup;
+			children = (
+				5855A55527EEB4ED00DE2F49 /* TestWiFiTransmissionTests.m */,
+			);
+			path = TestWiFiTransmissionTests;
+			sourceTree = "<group>";
+		};
+		5855A55E27EEB4ED00DE2F49 /* TestWiFiTransmissionUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5855A55F27EEB4ED00DE2F49 /* TestWiFiTransmissionUITests.m */,
+				5855A56127EEB4ED00DE2F49 /* TestWiFiTransmissionUITestsLaunchTests.m */,
+			);
+			path = TestWiFiTransmissionUITests;
+			sourceTree = "<group>";
+		};
+		5855A56E27EEB4FC00DE2F49 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				5855A56F27EEB7C500DE2F49 /* CocoaHTTPServer */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		5855A56F27EEB7C500DE2F49 /* CocoaHTTPServer */ = {
+			isa = PBXGroup;
+			children = (
+				5855A5DE27EEBB0100DE2F49 /* MyHTTPConnection.h */,
+				5855A5DF27EEBB0100DE2F49 /* MyHTTPConnection.m */,
+				5855A5D927EEBAF400DE2F49 /* web */,
+				5855A57027EEB7D900DE2F49 /* Core */,
+				5855A5A927EEB7E000DE2F49 /* Extensions */,
+				5855A5B727EEB7E800DE2F49 /* Vendor */,
+			);
+			path = CocoaHTTPServer;
+			sourceTree = "<group>";
+		};
+		5855A57027EEB7D900DE2F49 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				5855A59027EEB7D900DE2F49 /* Categories */,
+				5855A57527EEB7D900DE2F49 /* HTTPAuthenticationRequest.h */,
+				5855A58F27EEB7D900DE2F49 /* HTTPAuthenticationRequest.m */,
+				5855A57127EEB7D900DE2F49 /* HTTPConnection.h */,
+				5855A58527EEB7D900DE2F49 /* HTTPConnection.m */,
+				5855A57227EEB7D900DE2F49 /* HTTPLogging.h */,
+				5855A57327EEB7D900DE2F49 /* HTTPMessage.h */,
+				5855A58427EEB7D900DE2F49 /* HTTPMessage.m */,
+				5855A58727EEB7D900DE2F49 /* HTTPResponse.h */,
+				5855A58327EEB7D900DE2F49 /* HTTPServer.h */,
+				5855A59727EEB7D900DE2F49 /* HTTPServer.m */,
+				5855A58827EEB7D900DE2F49 /* Mime */,
+				5855A57627EEB7D900DE2F49 /* Responses */,
+				5855A57427EEB7D900DE2F49 /* WebSocket.h */,
+				5855A58627EEB7D900DE2F49 /* WebSocket.m */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		5855A57627EEB7D900DE2F49 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				5855A57727EEB7D900DE2F49 /* HTTPAsyncFileResponse.h */,
+				5855A57827EEB7D900DE2F49 /* HTTPErrorResponse.m */,
+				5855A57927EEB7D900DE2F49 /* HTTPDataResponse.m */,
+				5855A57A27EEB7D900DE2F49 /* HTTPRedirectResponse.h */,
+				5855A57B27EEB7D900DE2F49 /* HTTPDynamicFileResponse.m */,
+				5855A57C27EEB7D900DE2F49 /* HTTPFileResponse.m */,
+				5855A57D27EEB7D900DE2F49 /* HTTPAsyncFileResponse.m */,
+				5855A57E27EEB7D900DE2F49 /* HTTPRedirectResponse.m */,
+				5855A57F27EEB7D900DE2F49 /* HTTPDataResponse.h */,
+				5855A58027EEB7D900DE2F49 /* HTTPErrorResponse.h */,
+				5855A58127EEB7D900DE2F49 /* HTTPFileResponse.h */,
+				5855A58227EEB7D900DE2F49 /* HTTPDynamicFileResponse.h */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		5855A58827EEB7D900DE2F49 /* Mime */ = {
+			isa = PBXGroup;
+			children = (
+				5855A58927EEB7D900DE2F49 /* MultipartFormDataParser.h */,
+				5855A58A27EEB7D900DE2F49 /* MultipartMessageHeader.h */,
+				5855A58B27EEB7D900DE2F49 /* MultipartMessageHeaderField.m */,
+				5855A58C27EEB7D900DE2F49 /* MultipartFormDataParser.m */,
+				5855A58D27EEB7D900DE2F49 /* MultipartMessageHeader.m */,
+				5855A58E27EEB7D900DE2F49 /* MultipartMessageHeaderField.h */,
+			);
+			path = Mime;
+			sourceTree = "<group>";
+		};
+		5855A59027EEB7D900DE2F49 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				5855A59127EEB7D900DE2F49 /* DDNumber.m */,
+				5855A59227EEB7D900DE2F49 /* DDData.m */,
+				5855A59327EEB7D900DE2F49 /* DDRange.h */,
+				5855A59427EEB7D900DE2F49 /* DDNumber.h */,
+				5855A59527EEB7D900DE2F49 /* DDRange.m */,
+				5855A59627EEB7D900DE2F49 /* DDData.h */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		5855A5A927EEB7E000DE2F49 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5855A5AA27EEB7E000DE2F49 /* WebDAV */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5855A5AA27EEB7E000DE2F49 /* WebDAV */ = {
+			isa = PBXGroup;
+			children = (
+				5855A5AB27EEB7E000DE2F49 /* DAVConnection.m */,
+				5855A5AC27EEB7E000DE2F49 /* DAVResponse.h */,
+				5855A5AD27EEB7E000DE2F49 /* DELETEResponse.m */,
+				5855A5AE27EEB7E000DE2F49 /* PUTResponse.h */,
+				5855A5AF27EEB7E000DE2F49 /* DAVConnection.h */,
+				5855A5B027EEB7E000DE2F49 /* DAVResponse.m */,
+				5855A5B127EEB7E000DE2F49 /* PUTResponse.m */,
+				5855A5B227EEB7E000DE2F49 /* DELETEResponse.h */,
+			);
+			path = WebDAV;
+			sourceTree = "<group>";
+		};
+		5855A5B727EEB7E800DE2F49 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				5855A5B827EEB7E800DE2F49 /* CocoaLumberjack */,
+				5855A5CA27EEB7E800DE2F49 /* CocoaAsyncSocket */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		5855A5B827EEB7E800DE2F49 /* CocoaLumberjack */ = {
+			isa = PBXGroup;
+			children = (
+				5855A5B927EEB7E800DE2F49 /* DDTTYLogger.m */,
+				5855A5BA27EEB7E800DE2F49 /* DDLog.h */,
+				5855A5BB27EEB7E800DE2F49 /* DDAbstractDatabaseLogger.h */,
+				5855A5BC27EEB7E800DE2F49 /* DDASLLogger.m */,
+				5855A5BD27EEB7E800DE2F49 /* DDFileLogger.h */,
+				5855A5BE27EEB7E800DE2F49 /* Extensions */,
+				5855A5C427EEB7E800DE2F49 /* DDLog.m */,
+				5855A5C527EEB7E800DE2F49 /* About1.txt */,
+				5855A5C627EEB7E800DE2F49 /* DDTTYLogger.h */,
+				5855A5C727EEB7E800DE2F49 /* DDAbstractDatabaseLogger.m */,
+				5855A5C827EEB7E800DE2F49 /* DDFileLogger.m */,
+				5855A5C927EEB7E800DE2F49 /* DDASLLogger.h */,
+			);
+			path = CocoaLumberjack;
+			sourceTree = "<group>";
+		};
+		5855A5BE27EEB7E800DE2F49 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5855A5BF27EEB7E800DE2F49 /* ContextFilterLogFormatter.h */,
+				5855A5C027EEB7E800DE2F49 /* DispatchQueueLogFormatter.h */,
+				5855A5C127EEB7E800DE2F49 /* ContextFilterLogFormatter.m */,
+				5855A5C227EEB7E800DE2F49 /* DispatchQueueLogFormatter.m */,
+				5855A5C327EEB7E800DE2F49 /* README.txt */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5855A5CA27EEB7E800DE2F49 /* CocoaAsyncSocket */ = {
+			isa = PBXGroup;
+			children = (
+				5855A5CB27EEB7E800DE2F49 /* GCDAsyncSocket.m */,
+				5855A5CC27EEB7E800DE2F49 /* About.txt */,
+				5855A5CD27EEB7E800DE2F49 /* GCDAsyncSocket.h */,
+			);
+			path = CocoaAsyncSocket;
+			sourceTree = "<group>";
+		};
+		5855A5D927EEBAF400DE2F49 /* web */ = {
+			isa = PBXGroup;
+			children = (
+				5855A5DA27EEBAF400DE2F49 /* index.html */,
+				5855A5DB27EEBAF400DE2F49 /* upload.html */,
+			);
+			path = web;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5855A53527EEB4E800DE2F49 /* TestWiFiTransmission */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5855A56527EEB4ED00DE2F49 /* Build configuration list for PBXNativeTarget "TestWiFiTransmission" */;
+			buildPhases = (
+				5855A53227EEB4E800DE2F49 /* Sources */,
+				5855A53327EEB4E800DE2F49 /* Frameworks */,
+				5855A53427EEB4E800DE2F49 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TestWiFiTransmission;
+			productName = TestWiFiTransmission;
+			productReference = 5855A53627EEB4E800DE2F49 /* TestWiFiTransmission.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5855A55027EEB4ED00DE2F49 /* TestWiFiTransmissionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5855A56827EEB4ED00DE2F49 /* Build configuration list for PBXNativeTarget "TestWiFiTransmissionTests" */;
+			buildPhases = (
+				5855A54D27EEB4ED00DE2F49 /* Sources */,
+				5855A54E27EEB4ED00DE2F49 /* Frameworks */,
+				5855A54F27EEB4ED00DE2F49 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5855A55327EEB4ED00DE2F49 /* PBXTargetDependency */,
+			);
+			name = TestWiFiTransmissionTests;
+			productName = TestWiFiTransmissionTests;
+			productReference = 5855A55127EEB4ED00DE2F49 /* TestWiFiTransmissionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5855A55A27EEB4ED00DE2F49 /* TestWiFiTransmissionUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5855A56B27EEB4ED00DE2F49 /* Build configuration list for PBXNativeTarget "TestWiFiTransmissionUITests" */;
+			buildPhases = (
+				5855A55727EEB4ED00DE2F49 /* Sources */,
+				5855A55827EEB4ED00DE2F49 /* Frameworks */,
+				5855A55927EEB4ED00DE2F49 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5855A55D27EEB4ED00DE2F49 /* PBXTargetDependency */,
+			);
+			name = TestWiFiTransmissionUITests;
+			productName = TestWiFiTransmissionUITests;
+			productReference = 5855A55B27EEB4ED00DE2F49 /* TestWiFiTransmissionUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5855A52E27EEB4E800DE2F49 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					5855A53527EEB4E800DE2F49 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					5855A55027EEB4ED00DE2F49 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 5855A53527EEB4E800DE2F49;
+					};
+					5855A55A27EEB4ED00DE2F49 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 5855A53527EEB4E800DE2F49;
+					};
+				};
+			};
+			buildConfigurationList = 5855A53127EEB4E800DE2F49 /* Build configuration list for PBXProject "TestWiFiTransmission" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5855A52D27EEB4E800DE2F49;
+			productRefGroup = 5855A53727EEB4E800DE2F49 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5855A53527EEB4E800DE2F49 /* TestWiFiTransmission */,
+				5855A55027EEB4ED00DE2F49 /* TestWiFiTransmissionTests */,
+				5855A55A27EEB4ED00DE2F49 /* TestWiFiTransmissionUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5855A53427EEB4E800DE2F49 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5855A5DC27EEBAF400DE2F49 /* index.html in Resources */,
+				5855A5D827EEB7E800DE2F49 /* About.txt in Resources */,
+				5855A54927EEB4EC00DE2F49 /* LaunchScreen.storyboard in Resources */,
+				5855A5DD27EEBAF400DE2F49 /* upload.html in Resources */,
+				5855A54627EEB4EC00DE2F49 /* Assets.xcassets in Resources */,
+				5855A5D227EEB7E800DE2F49 /* README.txt in Resources */,
+				5855A54427EEB4E800DE2F49 /* Main.storyboard in Resources */,
+				5855A5D427EEB7E800DE2F49 /* About1.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5855A54F27EEB4ED00DE2F49 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5855A55927EEB4ED00DE2F49 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5855A53227EEB4E800DE2F49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5855A5D327EEB7E800DE2F49 /* DDLog.m in Sources */,
+				5855A5A027EEB7D900DE2F49 /* WebSocket.m in Sources */,
+				5855A59827EEB7D900DE2F49 /* HTTPErrorResponse.m in Sources */,
+				5855A5D527EEB7E800DE2F49 /* DDAbstractDatabaseLogger.m in Sources */,
+				5855A5B527EEB7E000DE2F49 /* DAVResponse.m in Sources */,
+				5855A5A527EEB7D900DE2F49 /* DDNumber.m in Sources */,
+				5855A5B427EEB7E000DE2F49 /* DELETEResponse.m in Sources */,
+				5855A54127EEB4E800DE2F49 /* ViewController.m in Sources */,
+				5855A5A327EEB7D900DE2F49 /* MultipartMessageHeader.m in Sources */,
+				5855A5E027EEBB0100DE2F49 /* MyHTTPConnection.m in Sources */,
+				5855A5D727EEB7E800DE2F49 /* GCDAsyncSocket.m in Sources */,
+				5855A5A727EEB7D900DE2F49 /* DDRange.m in Sources */,
+				5855A59927EEB7D900DE2F49 /* HTTPDataResponse.m in Sources */,
+				5855A53B27EEB4E800DE2F49 /* AppDelegate.m in Sources */,
+				5855A5B627EEB7E000DE2F49 /* PUTResponse.m in Sources */,
+				5855A59B27EEB7D900DE2F49 /* HTTPFileResponse.m in Sources */,
+				5855A54C27EEB4EC00DE2F49 /* main.m in Sources */,
+				5855A5D127EEB7E800DE2F49 /* DispatchQueueLogFormatter.m in Sources */,
+				5855A5A627EEB7D900DE2F49 /* DDData.m in Sources */,
+				5855A5D627EEB7E800DE2F49 /* DDFileLogger.m in Sources */,
+				5855A5CF27EEB7E800DE2F49 /* DDASLLogger.m in Sources */,
+				5855A5D027EEB7E800DE2F49 /* ContextFilterLogFormatter.m in Sources */,
+				5855A59A27EEB7D900DE2F49 /* HTTPDynamicFileResponse.m in Sources */,
+				5855A5A827EEB7D900DE2F49 /* HTTPServer.m in Sources */,
+				5855A5A127EEB7D900DE2F49 /* MultipartMessageHeaderField.m in Sources */,
+				5855A5A227EEB7D900DE2F49 /* MultipartFormDataParser.m in Sources */,
+				5855A59F27EEB7D900DE2F49 /* HTTPConnection.m in Sources */,
+				5855A5CE27EEB7E800DE2F49 /* DDTTYLogger.m in Sources */,
+				5855A53E27EEB4E800DE2F49 /* SceneDelegate.m in Sources */,
+				5855A59D27EEB7D900DE2F49 /* HTTPRedirectResponse.m in Sources */,
+				5855A59E27EEB7D900DE2F49 /* HTTPMessage.m in Sources */,
+				5855A5A427EEB7D900DE2F49 /* HTTPAuthenticationRequest.m in Sources */,
+				5855A59C27EEB7D900DE2F49 /* HTTPAsyncFileResponse.m in Sources */,
+				5855A5B327EEB7E000DE2F49 /* DAVConnection.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5855A54D27EEB4ED00DE2F49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5855A55627EEB4ED00DE2F49 /* TestWiFiTransmissionTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5855A55727EEB4ED00DE2F49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5855A56027EEB4ED00DE2F49 /* TestWiFiTransmissionUITests.m in Sources */,
+				5855A56227EEB4ED00DE2F49 /* TestWiFiTransmissionUITestsLaunchTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5855A55327EEB4ED00DE2F49 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5855A53527EEB4E800DE2F49 /* TestWiFiTransmission */;
+			targetProxy = 5855A55227EEB4ED00DE2F49 /* PBXContainerItemProxy */;
+		};
+		5855A55D27EEB4ED00DE2F49 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5855A53527EEB4E800DE2F49 /* TestWiFiTransmission */;
+			targetProxy = 5855A55C27EEB4ED00DE2F49 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5855A54227EEB4E800DE2F49 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5855A54327EEB4E800DE2F49 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5855A54727EEB4EC00DE2F49 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5855A54827EEB4EC00DE2F49 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5855A56327EEB4ED00DE2F49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5855A56427EEB4ED00DE2F49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5855A56627EEB4ED00DE2F49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LN5Z4LQL2H;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TestWiFiTransmission/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhujunyu.cn.TestWiFiTransmission;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5855A56727EEB4ED00DE2F49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LN5Z4LQL2H;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TestWiFiTransmission/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhujunyu.cn.TestWiFiTransmission;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5855A56927EEB4ED00DE2F49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LN5Z4LQL2H;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhujunyu.cn.TestWiFiTransmissionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestWiFiTransmission.app/TestWiFiTransmission";
+			};
+			name = Debug;
+		};
+		5855A56A27EEB4ED00DE2F49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LN5Z4LQL2H;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhujunyu.cn.TestWiFiTransmissionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestWiFiTransmission.app/TestWiFiTransmission";
+			};
+			name = Release;
+		};
+		5855A56C27EEB4ED00DE2F49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LN5Z4LQL2H;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhujunyu.cn.TestWiFiTransmissionUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TestWiFiTransmission;
+			};
+			name = Debug;
+		};
+		5855A56D27EEB4ED00DE2F49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LN5Z4LQL2H;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhujunyu.cn.TestWiFiTransmissionUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TestWiFiTransmission;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5855A53127EEB4E800DE2F49 /* Build configuration list for PBXProject "TestWiFiTransmission" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5855A56327EEB4ED00DE2F49 /* Debug */,
+				5855A56427EEB4ED00DE2F49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5855A56527EEB4ED00DE2F49 /* Build configuration list for PBXNativeTarget "TestWiFiTransmission" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5855A56627EEB4ED00DE2F49 /* Debug */,
+				5855A56727EEB4ED00DE2F49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5855A56827EEB4ED00DE2F49 /* Build configuration list for PBXNativeTarget "TestWiFiTransmissionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5855A56927EEB4ED00DE2F49 /* Debug */,
+				5855A56A27EEB4ED00DE2F49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5855A56B27EEB4ED00DE2F49 /* Build configuration list for PBXNativeTarget "TestWiFiTransmissionUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5855A56C27EEB4ED00DE2F49 /* Debug */,
+				5855A56D27EEB4ED00DE2F49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5855A52E27EEB4E800DE2F49 /* Project object */;
+}

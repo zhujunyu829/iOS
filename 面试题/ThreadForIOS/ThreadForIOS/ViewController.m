@@ -7,14 +7,36 @@
 
 #import "ViewController.h"
 #import <pthread.h>
+#import <libkern/OSAtomic.h>
+#import <os/lock.h>
+
+
+typedef NS_ENUM(NSInteger,IOSLockType) {
+    IOSLockTypeSynchronized =100,
+    IOSLockTypeOSSpinLock,
+    IOSLockTypeSemaphore,
+    IOSLockTypePthreadMutex,
+    IOSLockTypeNSLock,
+    IOSLockTypeNSCondition,
+    IOSLockTypeRecursive,
+    IOSLockTypeNSrecursiveLock,
+    IOSLockTypeNSConditionLock
+};
+
 @interface ViewController ()
 {
     int _ticket;
     int _btnCount;
 }
 @property (nonatomic, strong) NSLock *lock;//锁
-@property (nonatomic, strong) NSOperationQueue *queue;//队列
+@property (nonatomic, strong) NSConditionLock *clock;//锁
+@property (nonatomic, strong) NSCondition *condition;//锁
+@property (nonatomic, strong) NSRecursiveLock *recursiveLock;//锁
 
+@property (nonatomic, strong) NSOperationQueue *queue;//队列
+@property (assign, nonatomic) os_unfair_lock mLock;
+@property (nonatomic, strong) UIScrollView *contetnView;
+@property (nonatomic, strong) dispatch_semaphore_t semaphore;
 @end
 
 @implementation ViewController
@@ -22,8 +44,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.lock = [NSLock new];
+    self.mLock = OS_UNFAIR_LOCK_INIT;
+    self.semaphore = dispatch_semaphore_create(1);
+    self.clock = [NSConditionLock new];
+    self.condition = [NSCondition new];
+    self.recursiveLock = [NSRecursiveLock new];
     _ticket = 50;
     _btnCount = 0;
+    self.contetnView = [[UIScrollView alloc] initWithFrame:self.view.frame];
+
+    [self.view addSubview:self.contetnView];
     UIButton *pthreadBtn = [self getBtn:@"pthread" ];
     [pthreadBtn addTarget:self action:@selector(pthreadAction:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -35,6 +65,18 @@
     
     UIButton *saleSafeBtn = [self getBtn:@"卖票安全" ];
     [saleSafeBtn addTarget:self action:@selector(saleSafeBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    saleSafeBtn.tag = IOSLockTypeSynchronized;
+    
+    NSArray *lockArr = @[@"OSSpinLock",@"Semaphore",@"PthreadMutex",@"NSLock",@"NSCondition",@"Recursive",@"NSrecursiveLock",@"NSConditionLock"];
+   
+    for (int i = 0 ; i < lockArr.count; i ++) {
+        UIButton *saleSafeBtnOs = [self getBtn:lockArr[i] sel:@selector(saleSafeBtnAction:)];
+        saleSafeBtnOs.tag = IOSLockTypeOSSpinLock +i;
+    }
+    
+   
+    
+    
     
     UIButton *GCDsynBtn = [self getBtn:@"GCD同步" ];
     [GCDsynBtn addTarget:self action:@selector(GCDsynBtnAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -79,15 +121,18 @@
     // Do any additional setup after loading the view.
 }
 - (UIButton *)getBtn:(NSString *)title {
-    float x = 100*(_btnCount%4);
+    float with = (CGRectGetWidth(self.view.frame) -60)/4.0;
+    
+    float x = (with +20)*(_btnCount%4);
     float y = 80*(_btnCount /4 ) + 80;
     
     UIButton *bt = [UIButton buttonWithType:UIButtonTypeCustom];
-    bt.frame = CGRectMake(x, y, 80, 40);
+    bt.frame = CGRectMake(x, y, with, 40);
     bt.backgroundColor = [UIColor grayColor];
     [bt setTitle:title forState:UIControlStateNormal];
     bt.titleLabel.adjustsFontSizeToFitWidth = YES;
-    [self.view addSubview:bt];
+    [self.contetnView addSubview:bt];
+    self.contetnView.contentSize = CGSizeMake(CGRectGetWidth(self.view.frame), CGRectGetHeight(bt.frame)+y);
     _btnCount ++;
     return bt;
 }
@@ -551,38 +596,65 @@
 }
 
 
-- (void)saleSafeBtnAction:(id)sender{
+- (void)saleSafeBtnAction:(UIButton *)sender{
     _ticket = 50;
-    NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(saleTicketSafe) object:nil];
+    NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(saleTicketSafe:) object:@(sender.tag)];
     thread.name = @"长沙站";
     [thread start];
-    NSThread *threadCZ = [[NSThread alloc] initWithTarget:self selector:@selector(saleTicketSafe) object:nil];
+    NSThread *threadCZ = [[NSThread alloc] initWithTarget:self selector:@selector(saleTicketSafe:) object:@(sender.tag)];
     threadCZ.name = @"郴州站";
     [threadCZ start];
 }
 /**
  * 售卖火车票(程安全)
  */
-- (void)saleTicketSafe {
+- (void)saleTicketSafe:(NSNumber *)sendID {
     
     /*
      iOS 实现线程加锁有很多种方式。@synchronized、 NSLock、NSRecursiveLock、NSCondition、NSConditionLock、pthread_mutex、dispatch_semaphore、OSSpinLock、atomic(property) set/ge等等各种方式
+     
+      IOSLockTypeSynchronized =100,
+      IOSLockTypeOSSpinLock,
+      IOSLockTypeSemaphore,
+      IOSLockTypePthreadMutex,
+      ,
+      IOSLockTypeNSCondition,
+      IOSLockTypeRecursive,
+      IOSLockTypeNSrecursiveLock,
+      IOSLockTypeNSConditionLock
+      
      */
-    int i = 0;
+    int i = sendID.intValue ;
     switch (i) {
-        case 0:
+        case IOSLockTypeSynchronized://synchronized
         {
             [self useSynchronized];
         }break;
-        case 1:
+        case IOSLockTypeNSLock://NSLock
         {
             [self useNSlock];
         }break;
-        case 2:
+        case IOSLockTypeOSSpinLock://OSSpinLock
         {
-            
+            [self osspinLock];
+        }break;
+        case IOSLockTypeSemaphore:{//
+            [self semaphoreM];
+        }break;
+        case IOSLockTypePthreadMutex:{
+            [self pthread_mutex];
+        }break;
+        case IOSLockTypeNSConditionLock:{
+            [self ConditionLock];
+        }break;
+        case IOSLockTypeNSCondition:{
+            [self Condition];
+        }break;
+        case IOSLockTypeNSrecursiveLock:{
+            [self recursiveLockM];
         }break;
         default:{//非安全
+            return;
             while (1) {
                 if (_ticket > 0) {
                     _ticket --;
@@ -597,6 +669,118 @@
             }
         }
             break;
+    }
+}
+- (void)recursiveLockM{
+    while (1) {
+        [self.recursiveLock lock];
+        if (_ticket > 0) {
+            _ticket --;
+            NSLog(@"%@", [NSString stringWithFormat:@"剩余票数：%d 窗口：%@", _ticket, [NSThread currentThread].name]);
+            [NSThread sleepForTimeInterval:0.2];
+
+            [self.recursiveLock unlock];
+
+        }
+        //如果已卖完，关闭售票窗口
+        else {
+            NSLog(@"所有火车票均已售完");
+            [self.recursiveLock unlock];
+            break;
+        }
+    }
+}
+- (void)Condition{
+    while (1) {
+        [self.condition lock];
+        if (_ticket > 0) {
+            _ticket --;
+            NSLog(@"%@", [NSString stringWithFormat:@"剩余票数：%d 窗口：%@", _ticket, [NSThread currentThread].name]);
+            [self.condition waitUntilDate:[NSDate dateWithTimeIntervalSinceNow:2]];
+            [self.condition unlock];
+
+        }
+        //如果已卖完，关闭售票窗口
+        else {
+            NSLog(@"所有火车票均已售完");
+            [self.condition unlock];
+            break;
+        }
+    }
+}
+- (void)ConditionLock{
+    while (1) {
+        [self.clock lock];
+        if (_ticket > 0) {
+            _ticket --;
+            NSLog(@"%@", [NSString stringWithFormat:@"剩余票数：%d 窗口：%@", _ticket, [NSThread currentThread].name]);
+            [NSThread sleepForTimeInterval:0.2];
+            [self.clock unlock];
+
+        }
+        //如果已卖完，关闭售票窗口
+        else {
+            NSLog(@"所有火车票均已售完");
+            [self.clock unlock];
+            break;
+        }
+    }
+}
+- (void)pthread_mutex{
+    static pthread_mutex_t plock;
+    pthread_mutex_init(&plock, NULL);
+    while (1) {
+        pthread_mutex_lock(&plock);
+        if (_ticket > 0) {
+            _ticket --;
+            NSLog(@"%@", [NSString stringWithFormat:@"剩余票数：%d 窗口：%@", _ticket, [NSThread currentThread].name]);
+            [NSThread sleepForTimeInterval:0.2];
+            pthread_mutex_unlock(&plock);
+        }
+        //如果已卖完，关闭售票窗口
+        else {
+            NSLog(@"所有火车票均已售完");
+            pthread_mutex_unlock(&plock);
+            break;
+        }
+    }
+}
+- (void)semaphoreM{
+    while (1) {
+        dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
+        if (_ticket > 0) {
+            _ticket --;
+            NSLog(@"%@", [NSString stringWithFormat:@"剩余票数：%d 窗口：%@", _ticket, [NSThread currentThread].name]);
+            [NSThread sleepForTimeInterval:0.2];
+            dispatch_semaphore_signal(self.semaphore);
+        }
+        //如果已卖完，关闭售票窗口
+        else {
+            NSLog(@"所有火车票均已售完");
+            dispatch_semaphore_signal(self.semaphore);
+            break;
+        }
+    }
+}
+- (void)osspinLock{
+//    os_unfair_lock lock = OS_UNFAIR_LOCK_INIT;
+//    OSSpinLock *lock = OS_SPINLOCK_INIT;
+    while (1) {
+//        OSSpinLockLock(&lock);
+        os_unfair_lock_lock(&_mLock);
+        if (_ticket >0) {
+            _ticket --;
+            NSLog(@"%@", [NSString stringWithFormat:@"剩余票数：%d 窗口：%@", _ticket, [NSThread currentThread].name]);
+            [NSThread sleepForTimeInterval:0.2];
+        }else{
+            NSLog(@"所有火车票均已售完");
+            os_unfair_lock_unlock(&_mLock);
+            //        OSSpinLockUnlock(&lock);
+
+            break;
+        }
+        os_unfair_lock_unlock(&_mLock);
+//        OSSpinLockUnlock(&lock);
     }
 }
 - (void)useSynchronized{
