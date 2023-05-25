@@ -145,12 +145,25 @@ typedef NS_ENUM(NSInteger,IOSLockType) {
 #pragma mark - action
 
 #pragma mark NSOperation
+/*
+ NSOperation、NSOperationQueue 是苹果提供给我们的一套多线程解决方案。实际上 NSOperation、NSOperationQueue 是基于 GCD 更高一层的封装，完全面向对象。但是比 GCD 更简单易用、代码可读性也更高。
+ 
+ 可添加完成的代码块，在操作完成后执行。
+ 可以添加操作之间的依赖关系，方便的控制执行顺序。
+ 可以设定操作执行的优先级。
+ 可以很方便的取消一个操作的执行。
+ 使用 KVO 观察对操作执行状态的更改：isExecuteing、isFinished、isCancelled。
+ 方便继承和复用
+ 
+ 劣势
+ 开销更大
+ */
 - (void)combineImage{
     NSOperationQueue *queue = [[NSOperationQueue alloc]init];
     
     __block UIImage *image1;
     NSBlockOperation *downloadw1 = [NSBlockOperation blockOperationWithBlock:^{
-        
+        NSLog(@"下载图片1");
         //下载图片1
         NSURL *url = [NSURL URLWithString:@"https://lmg.jj20.com/up/allimg/tp09/210Q6123120B42-0-lp.jpg"];
         NSData *data = [NSData dataWithContentsOfURL:url];
@@ -159,7 +172,7 @@ typedef NS_ENUM(NSInteger,IOSLockType) {
     
     __block UIImage *image2;
     NSBlockOperation *downloadw2 = [NSBlockOperation blockOperationWithBlock:^{
-        
+        NSLog(@"下载图片2");
         //下载图片2
         NSURL *url = [NSURL URLWithString:@"https://lmg.jj20.com/up/allimg/tp09/210611094Q512b-0-lp.jpg"];
         NSData *data = [NSData dataWithContentsOfURL:url];
@@ -169,7 +182,7 @@ typedef NS_ENUM(NSInteger,IOSLockType) {
     
     
     NSBlockOperation *combine = [NSBlockOperation blockOperationWithBlock:^{
-        
+        NSLog(@"合成新图片");
         //合成新图片
         UIGraphicsBeginImageContext(CGSizeMake(100, 100));
         [image1 drawInRect:CGRectMake(0, 0, 50, 100)];
@@ -185,7 +198,10 @@ typedef NS_ENUM(NSInteger,IOSLockType) {
                 [iamgeV removeFromSuperview];
             });        }];
     }];
-    
+    /*
+     并行队列 设置依赖后完成图片合成  下载完图片后进行合成显示  通过
+    将任务加入到队列中且  NSOperationQueue
+     */
     [combine addDependency:downloadw1];
     [combine addDependency:downloadw2];
     
@@ -199,7 +215,7 @@ typedef NS_ENUM(NSInteger,IOSLockType) {
 
 - (void)addDependency{
     NSOperationQueue *queue = [[NSOperationQueue alloc]init];
-    
+
     NSBlockOperation *op1 = [NSBlockOperation blockOperationWithBlock:^{
         NSLog(@"down1---%@",[NSThread currentThread]);
     }];
@@ -208,7 +224,6 @@ typedef NS_ENUM(NSInteger,IOSLockType) {
         
     }];
     NSBlockOperation *op3 = [NSBlockOperation blockOperationWithBlock:^{
-        
         NSLog(@"down3---%@",[NSThread currentThread]);
         
     }];
@@ -216,9 +231,12 @@ typedef NS_ENUM(NSInteger,IOSLockType) {
         
         NSLog(@"down4---%@",[NSThread currentThread]);
     }];
-    
-    
-    //设置依赖（op1和op3执行完之后才执行2）
+    [op4 addExecutionBlock:^{
+        sleep(2);
+
+        NSLog(@"op4 额外任务");
+    }];
+     //设置依赖（op1和op4执行完之后才执行3）
     [op3 addDependency:op1];
     [op3 addDependency:op4];
     
@@ -239,6 +257,7 @@ typedef NS_ENUM(NSInteger,IOSLockType) {
     
     //创建队列
     self.queue = [[NSOperationQueue alloc]init];
+    //设置队列最大并发数 当最大并发为1时 基本就是串行队列
     self.queue.maxConcurrentOperationCount = 1;
     [self.queue addOperationWithBlock:^{
         NSLog(@"-1--%@",[NSThread currentThread]);
@@ -257,6 +276,9 @@ typedef NS_ENUM(NSInteger,IOSLockType) {
         [NSThread sleepForTimeInterval:1.0];
     }];
     //设置队列挂起或者取消的话都必须是在block方法执行完之后才有效
+    /*
+     默认为串行队列 依次执行
+     */
     [self.queue addOperationWithBlock:^{
         for(NSInteger i = 0;i<5;i++){
             NSLog(@"-5--%zd---%@",(long)i,[NSThread currentThread]);
@@ -342,7 +364,7 @@ typedef NS_ENUM(NSInteger,IOSLockType) {
  只有NSOperation放到一个NSOperationQueue中，才会异步执行
  */
 - (void)invocationOperation{
-    NSInvocationOperation *op = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(saleTicketSafe) object:nil];
+    NSInvocationOperation *op = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(saleTicketNotSafe) object:nil];
     [op start];
 }
 
@@ -474,6 +496,8 @@ typedef NS_ENUM(NSInteger,IOSLockType) {
     });
 }
 
+
+#pragma mark -  队列
 //异步函数 + 主队列 :只在主线程中执行任务
 - (void)GCDAsynMain{
     [self dispatchAsyncInQueue:dispatch_get_main_queue()];
@@ -528,9 +552,9 @@ typedef NS_ENUM(NSInteger,IOSLockType) {
             NSLog(@"1线程-%ld-%@",(long)i,[NSThread currentThread]);
         }
     });
-    dispatch_barrier_sync(queue, ^{
-        NSLog(@"barrier---%@",[NSThread currentThread]);
-    });
+//    dispatch_barrier_sync(queue, ^{
+//        NSLog(@"barrier---%@",[NSThread currentThread]);
+//    });
     dispatch_async(queue, ^{
         for (NSInteger i = 0; i<5; i++) {
             NSLog(@"2线程-%ld-%@",(long)i,[NSThread currentThread]);
@@ -604,6 +628,7 @@ typedef NS_ENUM(NSInteger,IOSLockType) {
     NSThread *threadCZ = [[NSThread alloc] initWithTarget:self selector:@selector(saleTicketSafe:) object:@(sender.tag)];
     threadCZ.name = @"郴州站";
     [threadCZ start];
+    
 }
 /**
  * 售卖火车票(程安全)
